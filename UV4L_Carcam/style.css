@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    color: white;
+    background-color:#303030;
+    user-select: none;
+    overflow-x: hidden;
+}
+.HeaderBar {
+    margin: 0;
+    height: 75px;
+    padding: 0;
+    top: 0;
+    background-color: #505050;
+    box-shadow: black 0 0 15px;
+}
+.HeaderBar h1 {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 650px) {
+    .HeaderBar h1 {
+        display: none;
+    }
+}
+
+.HeaderBar #logo {
+    width: auto;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.HeaderBar #connectionIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.HeaderBar #connectionButton {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 130px;
+    top: 18px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.HeaderBar #connectionButton:hover {
+    background-color: gray;
+}
+
+.HeaderBar #settingsIcon {
+    width: 40px;
+    height: 35px;
+}
+
+.HeaderBar #settingsButton {
+    width: 45px;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.settings #settingsButton:hover {
+    background-color: transparent;
+}
+
+.settingsDropdownContent {
+    position: absolute;
+    right: 0;
+    top: 65px;
+    display: none;
+    background-color: black;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 5px 5px 15px black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.settingsDropdownContent label {
+    display: block;
+    margin-top: 2px;
+    background-color: #202020;
+    padding: 10px;
+}
+
+#batteryIcon {
+    width: auto;
+    height: 40px;
+    position: absolute;
+    top: 17.5px;
+    right: 75px;
+}
+
+.batteryIndicator {
+    position: absolute;
+    right: 115px;
+    top: 17px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.batteryIndicator #batteryVoltageLabel {
+    padding: 0;
+    margin: 0;
+}
+
+.batteryIndicator #batteryPercentageLabel {
+    padding: 0;
+    margin: 0;
+}
+
+#start {
+    display:inline-block;
+    margin:0% auto 2%;
+}
+#stop {
+    display:inline-block;
+    margin:0% auto 2%;
+}
+video {
+    width: 800px;
+    height: 450px;
+    /*border:3px solid white;*/
+}
+#v {
+    width: 100%;
+    height: 56.25%;
+    /*width: 100%;*/
+    /*max-width: 800px;*/
+}
+
+/*canvas { border:8px solid #fff;}*/
+.UIButton {
+    border:none;
+    display:block;
+    margin:0% auto 0;
+    cursor:pointer;
+    color:#fff;
+    background-color:#404040;
+    border: solid 1px #808080;
+    border-radius: 10%;
+}
+.UIButton:active { background-color:#e44d26; }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.VideoMenu {
+    flex: 2;
+    text-align: center;
+    padding: 0;
+    border: 3px solid white;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: black;
+    box-shadow: 0 0 15px black;
+    overflow: hidden;
+}
+
+.ServoMenu {
+    flex: 1;
+    text-align: center;
+    margin: 5px;
+    border:white solid 3px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #202020;
+    box-shadow: 0 0 15px black;
+}
+
+.DriveMenu {
+    flex: 1;
+    text-align: center;
+    margin: 5px;
+    border:white solid 3px;
+    padding: 30px;
+    padding-bottom: 70px;
+    border-radius: 15px;
+    background-color: #202020;
+    box-shadow: 0 0 15px black;
+}
+
+@media (max-width: 950px) {
+    .VideoMenu {
+        order: -1;
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 565px) {
+    .ServoMenu {
+        flex: 0 0 80%;
+    }
+}
+
+.arrowKey {
+    align-items: center;
+    background-color: #202020;
+    border: solid #999 2px;
+    border-radius: 6px;
+    /*box-shadow: -1px 1px 0 #999, -2px 2px 0 #999, -3px 3px 0 #999;*/
+    color: white;
+    display: inline-flex;
+    font-size: 30px;
+    font-weight: bold;
+    height: 50px;
+    justify-content: center;
+    margin: 5px;
+    transform: translate3d(0,0,0);
+    /*transition: box-shadow .1s linear, transform .1s linear;*/
+    width: 50px;
+
+    &:hover {
+        background-color: #404040;
+    }
+    &:active,&.press {
+        /*box-shadow: 0px 0px 0 #999, -1px 1px 0 #999;*/
+        /*transform: translate3d(-2px, 2px, 0);*/
+        background-color: #e44d26;
+    }
+    &.panLeft:before {
+        content: "\2190";
+    }
+    &.panUp:before {
+        content: "\2191";
+    }
+    &.panDown:before {
+        content: "\2193";
+    }
+    &.panRight:before {
+        content: "\2192";
+    }
+    &.recenter:before {
+        content: "\25CE";
+    }
+}
+
+.nightVisionButton {
+    align-items: center;
+    background-color: #202020;
+    border: solid #999 2px;
+    border-radius: 6px;
+    color: white;
+    display: inline-flex;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    width: auto;
+    justify-content: center;
+    margin: 5px;
+    
+    &:hover {
+        background-color: #404040;
+    }
+    &:active,&.press {
+        background-color: #e44d26;
+    }
+}
+
+#nightVisionIcon {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+#nightVisionText {
+    /*color: greenyellow;*/
+    padding-left: 5px;
+}

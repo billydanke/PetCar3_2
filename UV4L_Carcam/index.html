@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <title>PetCar3 | Control</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+
+	    <script src='adapter.js'></script>
+        <script src='signalling.js'></script>
+        <script src='main.js'></script>
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+        <script src="joy.js"></script>
+    </head>
+    <body>
+        <div class="HeaderBar">
+            <h1>PetCar3</h1>
+            <img id="logo" src="images/FullPetRobotLogo.png"/>
+            <button id="connectionButton" title="Open Connection" onclick="toggleConnection()"><img id="connectionIcon" src="images/connectionIconRed.png"/></button>
+            
+            <div class="settings" id="settings">
+                <button id="settingsButton" title="Settings"><img id="settingsIcon" src="images/settingsIcon.png"/></button>
+                <div class="settingsDropdownContent" id="settingsDropdownContent">
+                    <h4 style="margin-top: 5px; margin-bottom: 5px; text-align: center;">Settings</h4>
+                    <hr>
+                    <label>
+                        <input type="checkbox" id="remote_hw_vcodec" checked name="remote_hw_vcodec" value="remote_hw_vcodec">H.264 Hardware Acceleration
+                    </label>
+                </div>
+            </div>
+            
+            <div class="batteryIndicator">
+                <div>
+                    <strong><p style="font-size: 25px;" id="batteryPercentageLabel">--%</p></strong>
+                    <p style="font-size: 15px;" id="batteryVoltageLabel">-- V</p>
+                </div>
+            </div>
+            <img id="batteryIcon" src="images/batteryEmptyIconWhite.png"/>
+        </div>
+
+        <!--<div class="ConnectionMenu">
+            <button class="UIButton" id='start'>Start Streaming</button>
+            <button class="UIButton" id='stop'>Stop Streaming</button>
+            <label>
+            <input type="checkbox" id="remote_hw_vcodec" checked name="remote_hw_vcodec" value="remote_hw_vcodec" title="try to force the use of the hardware codec for both encoding and decoding if enabled and supported">H.264 Codec
+            </label>
+        </div>-->
+
+        <div class="container">
+            <div class="DriveMenu">
+                <h2 style="font-family: Arial, Helvetica, sans-serif; margin: 0; margin-bottom: 20px;">Drive Control</h2>
+                <center><div id="joyDiv" style="width: 200px; height: 200px;"></div></center>
+                <!--<input id="testX" type="text" style="width: 50px;" />
+                <input id="testY" type="text" style="width: 50px;" />-->
+            </div>
+
+            <div class="VideoMenu">
+                <video id='v' width="800px" height="480px" playsinline autoplay></video>
+            </div>
+
+            <div class="ServoMenu">
+                <h2 style="font-family: Arial, Helvetica, sans-serif; margin: 0; margin-bottom: 20px;">Camera Control</h2>
+                <button class="arrowKey panUp" id="panUp" onclick='upPress(10)' title="Pan Camera Up"></button><br>
+                <button class="arrowKey panLeft" id="panLeft" onclick='leftPress(10)' title="Pan Camera Left"></button>
+                <button class="arrowKey recenter" id="recenter" onclick="recenterPress()" title="Recenter Camera"></button>
+                <button class="arrowKey panRight" id="panRight" onclick='rightPress(10)' title="Pan Camera Right"></button><br>
+                <button class="arrowKey panDown" id="panDown" onclick='downPress(10)' title="Pan Camera Down"></button><br>
+
+                <button class="nightVisionButton" id="nightVisionButton" onclick="toggleNightVision()" title="Toggle Nightvision">
+                    <img id="nightVisionIcon" src="images/nightVisionIconWhite.png"/>
+                    Nightvision:
+                    <p id="nightVisionText">--</p>
+                </button>
+            </div>
+        </div>
+
+	<script src="controlScript.js"></script>
+
+    </body>
+</html>

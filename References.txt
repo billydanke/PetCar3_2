@@ -1,0 +1,15 @@
+----------------------------------
+ List of Important File Locations
+----------------------------------
+
+UV4l CarCam Directory: /usr/share/uv4l/demos/carcam
+	- signalling.js handles the datachannel connection
+	- controlScript.js handles the actual sending of values through the channel
+
+Listener and Controller Script: /home/pi/Desktop/transfer.py
+	- recieves data from the webpage and parses it nicely
+	- communicates between the arduino and raspberry
+	- sends any necessary data back to the webpage
+	
+	!! this was moved into /etc/init.d/ to be run at startup !!
+	use command "/etc/init.d/transferStartup {start|stop}" to start or stop the service
