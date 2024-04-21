@@ -20,11 +20,11 @@ verticalServo = kit.servo[0]
 homeHorizontalAngle = 90
 homeVerticalAngle = 90
 
-minVerticalAngle = 85
+minVerticalAngle = 75
 maxVerticalAngle = 180
 
-minHorizontalAngle = 0
-maxHorizontalAngle = 180
+minHorizontalAngle = 10
+maxHorizontalAngle = 170
 
 horizontalServo.angle = homeHorizontalAngle
 verticalServo.angle = homeVerticalAngle
