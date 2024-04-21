@@ -2,11 +2,6 @@
 All of the code for PetCar3.2
 
 ## Installation Instructions
-When cloning the repo, I advise cloning the folder to the desktop. Wherever you install it, make sure you update
-the location of transfer.py in the /etc/init.d/transferStartup file. When it comes to the UV4L_Carcam folder,
-make sure you move the contents of this folder into the UV4L carcam Directory. On a fresh install of UV4L, this directory
-will not exist. In that case, make the directory at /usr/share/uv4l/demos/carcam, then place the files into it.
-
 ### Set up transfer.py on startup
 First, you need to copy the transferStartup file from this repo to /etc/init.d. Once it's copied in, you need to
 sudo nano into the file and update the file directory to wherever your transfer.py is saved. (For the easiest setup just
