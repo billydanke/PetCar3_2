@@ -17,7 +17,7 @@ except:
 horizontalServo = kit.servo[1]
 verticalServo = kit.servo[0]
 
-homeHorizontalAngle = 90
+homeHorizontalAngle = 85
 homeVerticalAngle = 90
 
 minVerticalAngle = 75
