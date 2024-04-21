@@ -17,8 +17,8 @@ except:
 horizontalServo = kit.servo[1]
 verticalServo = kit.servo[0]
 
-homeHorizontalAngle = 85
-homeVerticalAngle = 90
+homeHorizontalAngle = 80
+homeVerticalAngle = 80
 
 minVerticalAngle = 75
 maxVerticalAngle = 180
@@ -90,18 +90,18 @@ def handleServoSignal(data):
     elif(data[0] == 'l'):
         amt = int(data[2:])
         print("[Camera Control] Servo left " + str(amt))
-        if(horizontalServo.angle - amt >= minHorizontalAngle):
-            horizontalServo.angle -= amt
-        else:
-            horizontalServo.angle = minHorizontalAngle
-
-    elif(data[0] == 'r'):
-        amt = int(data[2:])
-        print("[Camera Control] Servo right " + str(amt))
         if(horizontalServo.angle + amt <= maxHorizontalAngle):
             horizontalServo.angle += amt
         else:
             horizontalServo.angle = maxHorizontalAngle
+
+    elif(data[0] == 'r'):
+        amt = int(data[2:])
+        print("[Camera Control] Servo right " + str(amt))
+        if(horizontalServo.angle - amt >= minHorizontalAngle):
+            horizontalServo.angle -= amt
+        else:
+            horizontalServo.angle = minHorizontalAngle
 
     elif(data[0] == 'c'):
         print("[Camera Control] Servo recenter")
@@ -193,7 +193,7 @@ try:
                     if data: # This is where all the good data flows
                         strData = str(data)
                         strData = strData[:-1]
-                        print(strData[2:])
+
                         signalParse(connection, strData[2:])
 
                     else:
